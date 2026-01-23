@@ -1,7 +1,7 @@
 ---
-import Mainpage from '../layout/mainpage.astro';
-import PostFrame from '../components/postFrame.astro';
+import Tagspage from '../layout/tagspage.astro';
 import Navigation from '../layout/navigation.astro';
+import TagsFrame from '../components/tagsFrame.astro';
 import '../styles/global.css';
 ---
 
@@ -16,9 +16,9 @@ import '../styles/global.css';
         <title>말랑 누오</title>
     </head>
     <body>
-        <Mainpage>
+        <Tagspage>
             <Navigation slot='header' />
-            <PostFrame slot='main' />
-        </Mainpage>
+            <TagsFrame slot='main' />
+        </Tagspage>
     </body>
 </html>
