@@ -13,7 +13,7 @@ interface Config {
 }
 
 const config: Config = {
-    site_title: '말랑 누오',
+    site_title: '말랑누오의 기록',
     site_description: '글이 자라나는 곳 🌱',
     site_tagline: '글이 자라나는 곳 🌱',
     avatar: '/avatar.webp',
