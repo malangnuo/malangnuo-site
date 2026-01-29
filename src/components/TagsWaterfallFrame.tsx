@@ -32,7 +32,7 @@ export default function TagsWaterfallFrame({ tagGroups, totalPosts, totalTags }:
     const getButtonStyle = (tag: string): string => {
         const baseClasses = 'inline-block px-3 py-1 rounded-lg font-bold text-sm transition-all duration-300 cursor-pointer ';
         if (selectedTag === tag) {
-            return baseClasses + 'bg-phOrange text-phWhite';
+            return baseClasses + 'bg-phBlue text-phWhite';
         }
         return baseClasses + 'bg-foilLight dark:bg-bgDark text-fontLight dark:text-fontDark hover:opacity-80';
     };
@@ -93,7 +93,7 @@ export default function TagsWaterfallFrame({ tagGroups, totalPosts, totalTags }:
 
                                     {/* Tag Title */}
                                     <div className="flex items-center justify-between mb-4">
-                                        <h2 className="text-2xl font-bold text-phOrange">
+                                        <h2 className="text-2xl font-bold text-phBlue">
                                             #{group.tag}
                                         </h2>
                                         <span className="text-sm text-descriptionTextLight dark:text-descriptionTextDark">
@@ -110,11 +110,11 @@ export default function TagsWaterfallFrame({ tagGroups, totalPosts, totalTags }:
                                                 className="block p-3 rounded-lg
                                                     hover:bg-bgLight dark:hover:bg-bgDark
                                                     transition-all duration-200
-                                                    border-l-4 border-phOrange
+                                                    border-l-4 border-phBlue
                                                     hover:pl-4"
                                             >
                                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                                                    <h3 className="text-lg font-semibold hover:text-phOrange transition-colors">
+                                                    <h3 className="text-lg font-semibold hover:text-phBlue transition-colors">
                                                         {post.data.title}
                                                     </h3>
                                                     <div className="flex items-center gap-3 text-sm text-descriptionTextLight dark:text-descriptionTextDark">

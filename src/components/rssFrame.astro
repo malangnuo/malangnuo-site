@@ -17,11 +17,11 @@ const rssUrl = new URL('/rss.xml', Astro.url).href;
         bg-foilLight dark:bg-bgDark
         text-fontLight dark:text-fontDark
         hover:shadow-lg shadow-bgDark dark:shadow-bgLight
-        border-l-4 border-phOrange
+        border-l-4 border-phBlue
         transition-all duration-300">
 
         <div class="flex items-center gap-4 mb-6">
-            <RssIcon class="h-12 w-12 text-phOrange" />
+            <RssIcon class="h-12 w-12 text-phBlue" />
             <div>
                 <h2 class="text-2xl font-bold mb-2">订阅我们的 RSS 源</h2>
                 <p class="text-descriptionTextLight dark:text-descriptionTextDark">
@@ -32,14 +32,14 @@ const rssUrl = new URL('/rss.xml', Astro.url).href;
 
         <div class="space-y-4">
             <div class="bg-bgLight dark:bg-bgDark rounded-lg p-4 border border-gray-200 dark:border-gray-700">
-                <h3 class="font-semibold mb-2 text-phOrange">RSS 订阅地址</h3>
+                <h3 class="font-semibold mb-2 text-phBlue">RSS 订阅地址</h3>
                 <div class="flex items-center gap-2">
                     <code class="flex-1 bg-foilLight dark:bg-foilDark px-3 py-2 rounded text-sm break-all">
                         {rssUrl}
                     </code>
                     <a
                         href="/rss.xml"
-                        class="px-4 py-2 bg-phOrange text-phWhite dark:text-phBlack rounded-lg hover:opacity-90 transition-opacity font-semibold"
+                        class="px-4 py-2 bg-phBlue text-phWhite dark:text-phBlack rounded-lg hover:opacity-90 transition-opacity font-semibold"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -49,7 +49,7 @@ const rssUrl = new URL('/rss.xml', Astro.url).href;
             </div>
 
             <div class="bg-bgLight dark:bg-bgDark rounded-lg p-4 border border-gray-200 dark:border-gray-700">
-                <h3 class="font-semibold mb-2 text-phOrange">如何使用 RSS</h3>
+                <h3 class="font-semibold mb-2 text-phBlue">如何使用 RSS</h3>
                 <ul class="text-sm text-descriptionTextLight dark:text-descriptionTextDark space-y-2">
                     <li>• 复制上方订阅地址</li>
                     <li>• 在你的 RSS 阅读器中添加此订阅源</li>
@@ -58,7 +58,7 @@ const rssUrl = new URL('/rss.xml', Astro.url).href;
             </div>
 
             <div class="bg-bgLight dark:bg-bgDark rounded-lg p-4 border border-gray-200 dark:border-gray-700">
-                <h3 class="font-semibold mb-2 text-phOrange">最新文章</h3>
+                <h3 class="font-semibold mb-2 text-phBlue">最新文章</h3>
                 <p class="text-sm text-descriptionTextLight dark:text-descriptionTextDark mb-2">
                     共 {posts.length} 篇文章
                 </p>

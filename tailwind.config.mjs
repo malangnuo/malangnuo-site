@@ -22,7 +22,7 @@ export default {
                 ringDark: '#c2410c',
                 headingHighlight: '#ea580c',
                 // phOrange: '#fda530',
-                phOrange: '#99cfe4',
+                phBlue: '#99cfe4',
                 phWhite: '#f9f9f9',
                 phBlack: '#1a1a1a',
             },
