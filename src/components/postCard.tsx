@@ -63,5 +63,4 @@ function PostCardComponent({ title, tags, description, introText, author, pubDat
     )
 }
 
-// 使用 React.memo 优化组件，避免不必要的重新渲染
 export default memo(PostCardComponent);

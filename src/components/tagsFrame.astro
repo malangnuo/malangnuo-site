@@ -3,10 +3,8 @@ import TagsWaterfallFrame from './TagsWaterfallFrame.tsx';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { sortPostsByDate } from '../utils/date';
 
-// 获取所有文章
 const posts = await getCollection('posts');
 
-// 按标签分组
 interface TagGroup {
     tag: string;
     posts: CollectionEntry<"posts">[];
