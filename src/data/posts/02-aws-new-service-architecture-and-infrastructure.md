@@ -1,13 +1,13 @@
 ---
-title: 'AWS 기반 신규 서비스 구축'
+title: 'AWS 기반 신규 서비스 설계 및 구축'
 publishDate: '2025-3-14'
 description: '입사 후 첫 프로젝트'
-introText: 'S사의 AWS 기반 신규 보안 서비스를 설계·구축하며, 대규모 UDP/TCP 트래픽 환경에서 데이터 유실 0을 달성하고 안정적인 자동 확장 아키텍처를 구현했다.'
+introText: 'S사의 AWS 기반 신규 보안 서비스의 아키텍처 설계부터 인프라 구축 및 테스트와 모니터링까지 담당했던 프로젝트'
 author: '말랑누오'
-tags: ['AWS', 'Terraform']
-slug: 'AWS-Solutions-Architect'
+tags: ['AWS', 'Terraform', 'Network']
+slug: 'aws-new-service-architecture-and-infrastructure'
 ---
-# AWS 기반 신규 서비스 구축
+# [회고] AWS 기반 신규 서비스 설계 및 구축 
 
 입사 후 처음으로 처음부터 끝까지 직접 담당하게 된 프로젝트였습니다. <br>
 
