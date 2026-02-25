@@ -5,7 +5,7 @@ description: 'CJ Cloud Wave 교육에서 진행한 프로젝트입니다.'
 introText: '실시간 데이터 수집 파이프라인과 운영에 최적화된 안정적인 인프라 구축을 중심으로 올리브영의 중동 시장 진출 확대를 위한 인프라 구축 프로젝트'
 author: '말랑누오'
 tags: ['AWS', 'Kubernetes', 'GitOps']
-slug: 'CJ-CloudWave-Project'
+slug: 'cj-cloudwave-project'
 ---
 
 # [회고] 중동 시장 진출을 위한 인프라 구축 프로젝트
