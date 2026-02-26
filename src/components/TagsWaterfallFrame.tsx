@@ -46,10 +46,10 @@ export default function TagsWaterfallFrame({ tagGroups, totalPosts, totalTags }:
             {/* Page Title */}
             <div className="px-4 pt-4">
                 <h1 className="text-3xl font-bold text-fontLight dark:text-fontDark mb-2">
-                    标签聚合
+                    Tags
                 </h1>
                 <p className="text-sm text-descriptionTextLight dark:text-descriptionTextDark">
-                    共 {totalTags} 个标签，{totalPosts} 篇文章
+                    총 {totalTags}개의 태그，{totalPosts}개의 포스트
                 </p>
             </div>
 
@@ -97,7 +97,7 @@ export default function TagsWaterfallFrame({ tagGroups, totalPosts, totalTags }:
                                             #{group.tag}
                                         </h2>
                                         <span className="text-sm text-descriptionTextLight dark:text-descriptionTextDark">
-                                            {group.count} 篇文章
+                                            {group.count} posts
                                         </span>
                                     </div>
 
