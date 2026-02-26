@@ -1,6 +1,5 @@
 ---
 import Mainpage from '../layout/mainpage.astro';
-import RssFrame from '../components/rssFrame.astro';
 import Navigation from '../layout/navigation.astro';
 import '../styles/global.css';
 ---
@@ -18,7 +17,6 @@ import '../styles/global.css';
     <body>
         <Mainpage>
             <Navigation slot='header' />
-            <RssFrame slot='main' />
         </Mainpage>
     </body>
 </html>
