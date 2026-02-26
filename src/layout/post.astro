@@ -1,6 +1,5 @@
 ---
 import * as motion from 'motion/react-client';
-import FriendLink from '../components/friendLink.astro';
 import '../styles/mathjax.css';
 import '../styles/global.css';
 import { fadeInSlide } from '../config/animations';
@@ -24,7 +23,6 @@ import config from '../../config';
                 >
                     <slot name='headings' />
                 </div>
-                <FriendLink />
             </motion.div>
         </div>
         <div
