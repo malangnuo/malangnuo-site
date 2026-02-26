@@ -5,7 +5,7 @@ description: '초보 엔지니어의 Kubernetes 플랫폼 운영 적응기 ①'
 introText: 'Kubernetes 기반 플랫폼을 운영하며, 모니터링·CI/CD·보안 자동화를 통해 장애 대응 속도와 운영 안정성을 지속적으로 개선'
 author: '말랑누오'
 tags: ['Kubernetes', 'Istio', 'GitOps', 'Observability']
-slug: 'saas-platform-management-task1'
+slug: 'saas-platform-management'
 ---
 
 # [회고] SaaS 플랫폼 운영 (1)
