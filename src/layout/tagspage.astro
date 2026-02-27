@@ -57,7 +57,7 @@ const totalTags = tags.size;
                         {config.author_description} 
                     </p>
                     <div
-                        class='mt-6 mb-2 flex flex-row w-full justify-around mt-4 mb-4 text-2xl text-profileTextLight dark:text-profileTextDark'
+                        class='mt-6 mb-6 flex flex-row w-full justify-around mt-4 mb-4 text-2xl text-profileTextLight dark:text-profileTextDark'
                     >
                         <div class='flex flex-col items-center'>
                             <div><Post class='w-9 h-9' /></div>
@@ -67,24 +67,6 @@ const totalTags = tags.size;
                             <div><Tag class='w-9 h-9' /></div>
                             <p class='text-3xl'>{totalTags}</p>
                         </div>
-                    </div>
-                    <div
-                        class='flex flex-row w-full mb-4 justify-around text-bg text-profileTextLight dark:text-profileTextDark'
-                    >
-                        <a
-                            href={config.linkedin}
-                            class='inline-flex w-2/5 justify-center items-center hover:bg-bgLight dark:hover:bg-bgDark rounded-md'
-                        >
-                            <LinkedIn class='h-5 w-5 mr-1' />
-                            LinkedIn
-                        </a>
-                        <a
-                            href={config.emailLink}
-                            class='inline-flex w-2/5 justify-center items-center hover:bg-bgLight dark:hover:bg-bgDark rounded-md'
-                        >
-                            <Mail class='h-5 w-5 mr-1' />
-                            E-Mail
-                        </a>
                     </div>
                 </div>
             </motion.div>
