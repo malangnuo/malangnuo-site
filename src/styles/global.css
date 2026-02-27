@@ -3,10 +3,11 @@
 
 body,
 html {
-    font-family: 'Noto Sans KR', Georgia, 'Times New Roman', Times;
+    font-family: 'Noto Sans KR', Georgia, 'Times New Roman', Times, sans-serif;
     overflow: hidden;
     height: 100%;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poor Story', Georgia, sans-serif;
 }
