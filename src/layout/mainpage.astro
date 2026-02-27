@@ -28,7 +28,6 @@ const totalTags = tags.size;
     <main class='flex flex-1 flex-col md:flex-row overflow-y-scroll' id="main-content-main">
         <div
             class='md:bg-bgLight md:dark:bg-bgDark flex flex-auto flex-col md:w-3/12 md:pl-16'
-        >
             <motion.div
                 client:load
                 {...fadeInSlide}
@@ -98,36 +97,14 @@ const totalTags = tags.size;
         >
             <slot name='main' />
         </div>
-        <div
-            class='md:bg-bgLight md:dark:bg-bgDark flex flex-auto flex-col md:w-2/12'
-        >
-            <motion.div
-                client:load
-                {...fadeInSlide}
-            >
-                <!-- foil -->
-                <div
-                    class='bg-foilLight dark:bg-foilDark flex flex-col items-center
-                                mt-2 md:mr-8 md:ml-4
-                                mr-4
-                                pt-6
-                                rounded-2xl'
+        <div class='bg-bgLight dark:bg-bgDark flex-auto w-2/12 hidden md:block'>
+            <div class='flex justify-center'>
+                <p
+                    class='italic text-descriptionTextLight dark:text-descriptionTextDark'
                 >
-                    
-                    <p
-                        class='text-profileTextLight dark:text-profileTextDark text-2xl mt-2 italic' style="font-family: 'Poor Story', sans-serif;"
-                    >
-                        Categories
-                    </p>
-                    <p
-                        class='-mt-4 text-descriptionTextLight dark:text-descriptionTextDark text-bg italic max-w-[320px] leading-relaxed whitespace-pre-line break-keep' style="font-family: 'Poor Story', sans-serif;"
-                    >
-                        K8s
-                        Cloud
-                        GitOps
-                    </p>
-                </div>
-            </motion.div>
+                    {config.site_tagline}
+                </p>
+            </div>
         </div>
         <GoBackToTop />
     </main>
