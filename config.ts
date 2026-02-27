@@ -5,7 +5,7 @@ interface Config {
     avatar: string;
     author: string;
     author_description: string;
-    github: string;
+    linkedin: string;
     email: string;
     email_subject: string;
     emailLink: string;
@@ -18,7 +18,7 @@ const config: Config = {
     avatar: '/avatar.webp',
     author: '말랑누오',
     author_description: '언제나 여유롭고 말랑한 누오를 좋아합니다.',
-    github: 'https://github.com/malangnuo',
+    linkedin: 'www.linkedin.com/in/by-choi',
     email: 'choiboyuna@gmail.com',
     email_subject: 'To.말랑누오',
     get emailLink(): string {
