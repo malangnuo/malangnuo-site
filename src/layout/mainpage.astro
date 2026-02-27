@@ -27,7 +27,7 @@ const totalTags = tags.size;
     <slot name='header' />
     <main class='flex flex-1 flex-col md:flex-row overflow-y-scroll' id="main-content-main">
         <div
-            class='md:bg-bgLight md:dark:bg-bgDark flex flex-auto flex-col md:w-3/12 md:pl-16'
+            class='md:bg-bgLight md:dark:bg-bgDark flex flex-auto flex-col md:w-3/12 md:pl-8'
             <motion.div
                 client:load
                 {...fadeInSlide}
@@ -35,7 +35,7 @@ const totalTags = tags.size;
                 <!-- foil -->
                 <div
                     class='bg-foilLight dark:bg-foilDark flex flex-col items-center
-                                mt-2 md:ml-8 md:mr-4
+                                mt-4 md:ml-8 md:mr-4 
                                 ml-4 mr-4
                                 pt-6
                                 rounded-2xl'
@@ -51,9 +51,9 @@ const totalTags = tags.size;
                         {config.author}
                     </p>
                     <p
-                        class='-mt-4 text-descriptionTextLight dark:text-descriptionTextDark text-bg italic max-w-[320px] leading-relaxed whitespace-pre-line break-keep' style="font-family: 'Poor Story', sans-serif;"
+                        class='mt-2 text-descriptionTextLight dark:text-descriptionTextDark text-lg italic max-w-[320px] leading-relaxed whitespace-pre-line break-keep font-semibold' style="font-family: 'Poor Story', sans-serif;"
                     >
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {config.author_description}
+                        {config.author_description}
                     </p>
                     <div
                         class='mt-6 mb-2 flex flex-row w-full justify-around mt-4 mb-4 text-2xl text-profileTextLight dark:text-profileTextDark'
@@ -90,19 +90,20 @@ const totalTags = tags.size;
         </div>
 
         <div
-            class='flex-auto md:w-8/12
+            class='flex-auto md:w-7/12
                 md:ml-0.5 md:mr-0.5
                 ml-2 mr-2 md:overflow-y-scroll'
             id="main-content-div"
         >
             <slot name='main' />
         </div>
-        <div class='bg-bgLight dark:bg-bgDark flex-auto w-2/12 hidden md:block'>
+        <div class='bg-bgLight dark:bg-bgDark flex-auto w-[12%] hidden md:block'>
             <div class='flex justify-center'>
                 <p
-                    class='italic text-descriptionTextLight dark:text-descriptionTextDark'
+                    class='mt-4 mr-2 italic text-descriptionTextLight dark:text-descriptionTextDark' style="font-family: 'Poor Story', sans-serif;"
                 >
-                    {config.site_tagline}
+                    {config.site_tagline} <br>
+                    {config.site_tagline2}
                 </p>
             </div>
         </div>
