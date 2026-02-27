@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+    darkMode: 'class',
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
     theme: {
         extend: {
@@ -21,7 +22,6 @@ export default {
                 ringLight: '#fef08a',
                 ringDark: '#c2410c',
                 headingHighlight: '#ea580c',
-                // phOrange: '#fda530',
                 phBlue: '#99cfe4',
                 phWhite: '#f9f9f9',
                 phBlack: '#1a1a1a',
