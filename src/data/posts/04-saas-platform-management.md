@@ -61,3 +61,8 @@ slug: 'saas-platform-management'
 
 초기와는 달리 **OpenTelemetry 도입** 이후에는 데이터를 보다 일관된 방식으로 수집할 수 있게 되면서, 장애 분석 과정이 더욱 효율적으로 개선되었습니다.
 
+<hr>
+
+## 이어서
+> [SaaS 플랫폼 운영 (2) - OPA Gatekeeper](https://malangnuo.com/posts/saas-platform-management-task2/)
+

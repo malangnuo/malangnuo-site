@@ -263,3 +263,9 @@ def lambda_handler(event, context):
 ## 마치며
 
 운영 환경에서 **비용은 곧 기술적인 지표**입니다. 자동화 시스템을 통해 반복적인 업무를 줄이고, 데이터 기반의 운영 환경을 구축함으로써 보다 본질적인 인프라 개선 업무에 집중할 수 있는 기반을 마련할 수 있었습니다.
+
+<hr>
+
+## 이어서
+
+> [AWS 시스템 운영 (2) - 백업 자동화](https://malangnuo.com/posts/aws-system-management-task2)

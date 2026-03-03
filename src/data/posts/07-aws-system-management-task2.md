@@ -11,7 +11,7 @@ slug: 'aws-system-management-task2'
 # [회고] AWS 시스템 운영 (2)
 ---
 이 글은 AWS 시스템 운영 1편에서 이어지는 내용입니다.
-> [AWS 시스템 운영 (1) - 운영 자동화](http://localhost:4321/posts/aws-system-management)
+> [AWS 시스템 운영 (1) - 운영 자동화](https://malangnuo.com/posts/aws-system-management)
 
 ---
 

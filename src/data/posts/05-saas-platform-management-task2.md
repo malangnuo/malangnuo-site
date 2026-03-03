@@ -12,7 +12,7 @@ slug: 'saas-platform-management-task2'
 <hr>
 
 이 글은 **SaaS 플랫폼 운영 1편**에서 이어지는 내용입니다.
-> [SaaS 플랫폼 운영 (1) - Observability](https://malangnuo.com/posts/saas-platform-management-task1/)
+> [SaaS 플랫폼 운영 (1) - Observability](https://malangnuo.com/posts/saas-platform-management/)
 
 <br>
 
