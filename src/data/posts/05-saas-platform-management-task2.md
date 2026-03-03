@@ -8,7 +8,7 @@ tags: ['Kubernetes', 'Istio', 'GitOps', 'Observability']
 slug: 'saas-platform-management-task2'
 ---
 
-# [회고] SaaS 플랫폼 운영 (2)
+# [회고] SaaS 플랫폼 운영 (2) - OPA Gatekeeper
 <hr>
 
 이 글은 **SaaS 플랫폼 운영 1편**에서 이어지는 내용입니다.

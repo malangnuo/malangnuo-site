@@ -8,7 +8,7 @@ tags: ['AWS', 'Python', 'Grafana']
 slug: 'aws-system-management'
 ---
 
-# [회고] AWS 시스템 운영 (1)
+# [회고] AWS 시스템 운영 (1) - 운영 자동화
 ---
 S기업의 AWS 마이그레이션 프로젝트를 성공적으로 마침과 동시에, 해당 인프라의 운영 업무까지 이어서 맡게 되었습니다.
 > [AWS 마이그레이션 프로젝트 내용 확인하기](https://malangnuo.com/posts/on-prem-to-aws-cloud-migration/)
