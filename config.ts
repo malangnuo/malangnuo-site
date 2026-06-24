@@ -19,7 +19,7 @@ const config: Config = {
     author: '말랑누오',
     author_description: '언제나 여유롭고 말랑한 누오를 좋아합니다.',
     linkedin: 'https://www.linkedin.com/in/by-choi',
-    email: 'choiboyuna@gmail.com',
+    email: '124bree@gmail.com',
     email_subject: 'To.말랑누오',
     get emailLink(): string {
         return `mailto:${this.email}?subject=${this.email_subject}`;
