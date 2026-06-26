@@ -1,6 +1,6 @@
 ---
 title: '스테이블 코인, 블록체인 회사의 DevOps Engineer로 입사하다'
-publishDate: '2026-6-25'
+publishDate: '2026-6-26'
 description: '혼돈의 pre-main 배포 속에서 GitOps 고도화, Alloy 기반 옵저버빌리티 통합, 그리고 FinOps 비용 절감까지 달려온 주니어 DevOps의 생생한 온보딩 회고'
 introText: '새로운 회사에서 DevOps Engineer로서 새로운 커리어를 시작하게 되었습니다.'
 author: '말랑누오'
