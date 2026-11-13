@@ -1,15 +1,19 @@
 ---
-import PostWaterfallFrame from './PostWaterfallFrame.tsx';
 import { getCollection } from 'astro:content';
-import { sortPostsByDate } from '../utils/date';
-
-const posts = await getCollection('posts');
-const sortedPosts = sortPostsByDate(posts);
+import { sortPostsByDate, formatDate } from '../utils/date';
+import config from '../../config';
+const posts = sortPostsByDate(await getCollection('posts'));
+const featured = posts[0];
+const topics = [...new Set(posts.flatMap(post => post.data.tags))].slice(0, 6);
 ---
-
-<suspense fallback="Loading...">
-    <PostWaterfallFrame posts={sortedPosts} client:load />
-</suspense>
-    
-
-
+<section class="home-intro">
+    <div><p class="eyebrow">Notes on building things</p><h1>기술을 깊이 들여다보고,<br />경험을 <em>차곡차곡.</em></h1><p class="intro-description">클라우드와 인프라 사이에서 발견한 답들.<br />직접 만들고, 부딪히고, 배운 과정을 기록합니다.</p></div>
+    <div class="intro-author"><img class="nuo-character" src={config.avatar} alt="누오 캐릭터" width="112" height="112" /><div class="intro-author-copy"><strong>안녕하세요, {config.author}입니다.</strong><p>{config.author_description}</p><span>Cloud · Infrastructure · Life</span></div></div>
+</section>
+{featured && <a class="featured-story" href={`/posts/${featured.id}`}>
+    <div class="architecture-art" aria-hidden="true"><div class="orbit"></div><div class="architecture-stack"><span>APPLICATION</span><span>INFRASTRUCTURE</span><span>CLOUD</span></div><span class="art-caption">MALANGNUO / LATEST NOTES</span></div>
+    <div class="featured-copy"><p class="eyebrow">최신 기록</p><h2>{featured.data.title}</h2><p>{featured.data.introText}</p><div class="post-tags">{featured.data.tags.join(' · ')}</div><span class="read-link">기록 읽어보기 <span aria-hidden="true">↗</span></span></div>
+</a>}
+<div class="journal-layout"><section aria-labelledby="recent-title"><div class="section-heading"><h2 id="recent-title">최근의 기록</h2><span>THE JOURNAL · {posts.length}</span></div>
+{posts.map((post, index) => <article class="journal-row"><span class="row-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><div><div class="post-meta"><span>{post.data.tags[0]}</span><time datetime={post.data.publishDate.toISOString()}>{formatDate(post.data.publishDate)}</time></div><h3><a href={`/posts/${post.id}`}>{post.data.title}</a></h3><p>{post.data.description}</p><div class="post-tags">{post.data.tags.map(tag => <a href={`/tags?tag=${encodeURIComponent(tag)}`}>{tag}</a>)}</div></div><a class="row-arrow" href={`/posts/${post.id}`} aria-label={`${post.data.title} 읽기`}>↗</a></article>)}
+</section><aside class="journal-aside"><h2 class="eyebrow">Explore topics</h2>{topics.map(tag => <a class="topic-link" href={`/tags?tag=${encodeURIComponent(tag)}`}><span>{tag}</span><span aria-hidden="true">↗</span></a>)}<div class="author-note"><p class="eyebrow">Behind the notes</p><strong>{config.site_tagline}</strong><p>조금 느리더라도,<br />배운 것을 내 것으로.<br />{config.site_tagline2}</p></div></aside></div>

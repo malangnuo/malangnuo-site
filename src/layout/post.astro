@@ -1,50 +1,8 @@
 ---
-import * as motion from 'motion/react-client';
+import Footer from '../components/Footer.astro';
 import '../styles/mathjax.css';
 import '../styles/global.css';
-import { fadeInSlide } from '../config/animations';
-import config from '../../config';
 ---
-
-<div
-    class='bg-bodyLight dark:bg-bodyDark flex flex-col overflow-hidden h-screen'
->
-    <slot name='header' />
-    <main class='flex flex-1'>
-        <div
-            class='bg-bgLight dark:bg-bgDark hidden md:flex flex-auto flex-col w-3/12 pl-16'
-        >
-            <motion.div
-                client:load
-                {...fadeInSlide}
-            >
-                <div
-                    class='bg-foilLight dark:bg-foilDark flex flex-col items-center mt-2 ml-8 mr-4 rounded-2xl pt-4 pb-4'
-                >
-                    <slot name='headings' />
-                </div>
-            </motion.div>
-        </div>
-        <div
-            class='flex-auto w-8/12 ml-0.5 mr-0.5 overflow-scroll p-10 pb-24'
-            id="main-content"
-            style='height: calc(100vh - 4rem)'
-        >
-            <motion.div
-                client:load
-                {...fadeInSlide}
-            >
-                <slot name='article' />
-            </motion.div>
-        </div>
-        <div
-            class='bg-bgLight dark:bg-bgDark hidden md:flex flex-auto w-2/12 justify-center'
-        >
-            <p
-                class='italic text-descriptionTextLight dark:text-descriptionTextDark'
-            >
-                {config.site_tagline}
-            </p>
-        </div>
-    </main>
-</div>
+<slot name="header" />
+<main class="article-layout shell" id="main-content"><aside class="article-toc" aria-label="글 목차"><p class="eyebrow">On this page</p><slot name="headings" /></aside><article class="article-content"><a class="back-link" href="/">← 전체 기록으로</a><slot name="article" /></article></main>
+<Footer />

@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Post from '../../layout/post.astro';
 import Prose from '../../components/Prose.astro';
 import Navigation from '../../layout/navigation.astro';
+import { formatDate } from '../../utils/date';
 import GoBackToTop from '../../components/goBackToTop.astro';
 
 export async function getStaticPaths() {
@@ -19,7 +20,7 @@ const { Content, headings } = await render(entry);
 const pageTitle = entry.data.title;
 ---
 
-<html lang='en'>
+<html lang='ko'>
     <head>
         <meta charset='utf-8' />
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
@@ -30,9 +31,9 @@ const pageTitle = entry.data.title;
     <body>
         <Post>
             <Navigation slot='header' />
-            <Prose slot='article'>
+            <div slot='article'><div class='article-meta'>{entry.data.author} · {formatDate(entry.data.publishDate)}<div class='post-tags'>{entry.data.tags.map((tag: string) => <a href={`/tags?tag=${encodeURIComponent(tag)}`}>{tag}</a>)}</div></div><Prose>
                 <Content />
-            </Prose>
+            </Prose></div>
             <div slot='headings' class='w-11/12 space-y-1'>
                 {
                     headings.map(
@@ -42,17 +43,12 @@ const pageTitle = entry.data.title;
                                 slug: string;
                                 text: string;
                             },
-                            id: number
                         ) => {
-                            let space = ' '.repeat((heading.depth - 1) * 4);
-                            let text = `${id + 1}. ${heading.text}`;
-                            let full_text = `${space}${text}`;
+                            let full_text = heading.text;
                             return (
                                 <a
-                                    class='whitespace-pre
-                                        text-profileTextLight dark:text-profileTextDark 
-                                        hover:bg-bgLight dark:hover:bg-bgDark
-                                        rounded-md w-full block font-bold text-ellipsis overflow-hidden'
+                                    class='toc-link'
+                                    style={`padding-left: ${Math.max(0, heading.depth - 2) * 12}px`}
                                     href={`#${heading.slug}`}
                                 >
                                     {full_text}

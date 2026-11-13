@@ -1,41 +1,26 @@
 ---
-import TagsWaterfallFrame from './TagsWaterfallFrame.tsx';
-import { getCollection, type CollectionEntry } from 'astro:content';
-import { sortPostsByDate } from '../utils/date';
-
-const posts = await getCollection('posts');
-
-interface TagGroup {
-    tag: string;
-    posts: CollectionEntry<"posts">[];
-    count: number;
-}
-
-const tagGroups: TagGroup[] = (() => {
-    const tagMap = new Map<string, CollectionEntry<"posts">[]>();
-
-    posts.forEach(post => {
-        post.data.tags.forEach(tag => {
-            if (!tagMap.has(tag)) {
-                tagMap.set(tag, []);
-            }
-            tagMap.get(tag)!.push(post);
-        });
-    });
-
-    return Array.from(tagMap.entries())
-        .map(([tag, posts]) => ({
-            tag,
-            posts: sortPostsByDate(posts),
-            count: posts.length,
-        }))
-        .sort((a, b) => b.count - a.count);
-})();
-
-const totalPosts = posts.length;
-const totalTags = tagGroups.length;
+import { getCollection } from 'astro:content';
+import { sortPostsByDate, formatDate } from '../utils/date';
+const posts = sortPostsByDate(await getCollection('posts'));
+const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
 ---
-
-<suspense fallback="Loading...">
-    <TagsWaterfallFrame tagGroups={tagGroups} totalPosts={totalPosts} totalTags={totalTags} client:load />
-</suspense>
+<section class="archive-intro"><p class="eyebrow">Explore the archive</p><h1>주제로 찾아보는 기록</h1><p>{tags.length}개의 태그, {posts.length}개의 기록.</p></section>
+<div class="tag-filters" aria-label="태그 필터"><button type="button" data-tag="" aria-pressed="true">전체</button>{tags.map(tag => <button type="button" data-tag={tag} aria-pressed="false">{tag} <span>{posts.filter(p => p.data.tags.includes(tag)).length}</span></button>)}</div>
+<section class="archive-list" aria-live="polite">{posts.map(post => <article class="journal-row" data-tags={JSON.stringify(post.data.tags)}><div><div class="post-meta"><span>{post.data.tags[0]}</span><time datetime={post.data.publishDate.toISOString()}>{formatDate(post.data.publishDate)}</time></div><h2><a href={`/posts/${post.id}`}>{post.data.title}</a></h2><p>{post.data.description}</p><div class="post-tags">{post.data.tags.join(' · ')}</div></div><a class="row-arrow" href={`/posts/${post.id}`} aria-label={`${post.data.title} 읽기`}>↗</a></article>)}</section>
+<script>
+const buttons = document.querySelectorAll<HTMLButtonElement>('[data-tag]');
+const rows = document.querySelectorAll<HTMLElement>('[data-tags]');
+function selectTag(tag: string) {
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.tag === tag)));
+    rows.forEach(row => { row.hidden = !!tag && !JSON.parse(row.dataset.tags || '[]').includes(tag); });
+}
+const requested = new URLSearchParams(location.search).get('tag') || '';
+selectTag(Array.from(buttons).some(button => button.dataset.tag === requested) ? requested : '');
+buttons.forEach(button => button.addEventListener('click', () => {
+    const tag = button.dataset.tag || '';
+    selectTag(tag);
+    const url = new URL(location.href);
+    if (tag) url.searchParams.set('tag', tag); else url.searchParams.delete('tag');
+    history.replaceState(null, '', url);
+}));
+</script>

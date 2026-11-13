@@ -1,0 +1,10 @@
+name = "malangnuo-cms-auth"
+main = "index.js"
+compatibility_date = "2026-11-01"
+workers_dev = false
+# Bind this Worker to this route on the existing malangnuo.com zone.
+routes = [{ pattern = "malangnuo.com/cms-auth/*", zone_name = "malangnuo.com" }]
+[vars]
+CMS_ORIGIN = "https://malangnuo.com"
+GITHUB_REPO = "malangnuo/malangnuo-site"
+# Add GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET with wrangler secret put.
